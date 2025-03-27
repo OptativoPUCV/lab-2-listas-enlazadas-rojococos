@@ -37,13 +37,15 @@ List * createList() {
 }
 
 void * firstList(List * list) {
-    if (list->head == NULL) return NULL;
+    if (list->head == NULL){
+        return NULL;
+    }
     list->current = list->head;
     return (list->current->data);
 }
 
 void * nextList(List * list) {
-    if (list->current->next == NULL) return NULL;
+    if (list->current == NULL || list->current->next == NULL) return NULL;
     list->current = list->current->next;
     return (list->current->data);
 }
@@ -55,7 +57,7 @@ void * lastList(List * list) {
 }
 
 void * prevList(List * list) {
-    if (list->current->prev == NULL) return NULL;
+    if (list->current == NULL || list->current->prev == NULL) return NULL;
     list->current = list->current->prev;
     return (list->current->data);
 }
@@ -119,6 +121,7 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
+    if (list->current == NULL) return NULL;
     void * elemento = list->current->data;
     //si el current es el head
     if (list->current == list->head){
