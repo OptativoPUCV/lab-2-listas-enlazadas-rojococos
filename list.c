@@ -142,6 +142,7 @@ void * popCurrent(List * list) {
         free(list->current);
         list->current = aux;        
     }
+    return elemento;
 }
 
 void cleanList(List * list) {
