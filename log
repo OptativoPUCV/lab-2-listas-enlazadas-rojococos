@@ -1,0 +1,14 @@
+Thu 27 Mar 2025 08:51:23 PM UTC: 
+ list.c | 83 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 77 insertions(+), 6 deletions(-)
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:122:12: error: unused variable ‘elemento’ [-Werror=unused-variable]
+  122 |     void * elemento = list->current->data;
+      |            ^~~~~~~~
+list.c:145:1: error: control reaches end of non-void function [-Werror=return-type]
+  145 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+25021aa
